@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DeerTime.Views.TaskItemView">
+    <DockPanel LastChildFill="True" HorizontalAlignment="Stretch"    IsEnabled="{Binding IsDisplayed}">
+        <Border Width="40" DockPanel.Dock="Right" HorizontalAlignment="Right"  VerticalAlignment="Center">
+            <Button  Command="{Binding TaskPause}" IsEnabled="{Binding IsActive}">
+                <PathIcon Data="{StaticResource pause_regular}"  VerticalAlignment="Center"/>
+            </Button>
+        </Border>
+        <Border Width="40" DockPanel.Dock="Right" HorizontalAlignment="Right"  VerticalAlignment="Center">
+            <Button  Command="{Binding TaskStart}" IsEnabled="{Binding !IsActive}" >
+                <PathIcon Data="{StaticResource play_regular}"  VerticalAlignment="Center"/>
+            </Button>
+        </Border>
+        <Border DockPanel.Dock="Right" HorizontalAlignment="Right">
+            <TextBlock Margin="5" Width="150"  Text="{Binding FormattedSpentTime}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        </Border>
+        <Border DockPanel.Dock="Right" HorizontalAlignment="Right" IsVisible="{Binding IsActive}" >
+            <TextBlock Width="200" Text="[ Working ]" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        </Border>
+        <Border>
+            <TextBlock Text="{Binding Description}"  HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        </Border>
+    </DockPanel>
+</UserControl>

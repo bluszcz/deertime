@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="DeerTime.Views.AddItemView">
+ <DockPanel>
+ 
+    <!-- <Button DockPanel.Dock="Bottom">Add an item</Button> -->
+    <StackPanel>
+    
+    <TextBlock Margin="4" TextWrapping="Wrap" FontWeight="{Binding DisplayWeight}" Text="Enter name of the new task"/>
+    <DockPanel LastChildFill="True">
+      <!-- <Button Margin="0" HorizontalAlignment="Left" DockPanel.Dock="Right" VerticalAlignment="Top" Command="{Binding $parent[Window].DataContext.AddItem}"> -->
+      <Button Margin="0" HorizontalAlignment="Left" DockPanel.Dock="Right" VerticalAlignment="Top" Command="{Binding AddItem}">
+        <PathIcon Data="{StaticResource play_regular}" />
+      </Button>
+       <TextBox   Text="{Binding Description, Mode=TwoWay}"/> 
+    </DockPanel>
+
+      <!-- <CheckBox Margin="4">Walk the dog</CheckBox>
+      <CheckBox Margin="4">Buy some milk</CheckBox> -->
+
+    </StackPanel>
+
+  </DockPanel>
+</UserControl>

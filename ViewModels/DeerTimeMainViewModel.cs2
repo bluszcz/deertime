@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DeerTime.Services;
+
+namespace DeerTime.ViewModels
+{
+    public class DeerTimeMainViewModel : ViewModelBase
+    {
+        string description;
+
+        public DeerTimeMainViewModel(Database db)
+        {
+            description = "AAA";
+            List = new DeerTimeMainViewModel(db.GetItems());
+        }
+
+        public DeerTimeMainViewModel List { get; }
+
+        public void AddItem()
+        {
+            Console.WriteLine("Test!" + Description);
+        }
+        public string Description
+        {
+            get => description;
+            // set => this.RaiseAndSetIfChanged(ref description, value);
+        }
+    }
+
+}
